@@ -1,31 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap');
-:root{
-  --pri-color:rgb(240,122,122);
-  --grey-color:rgb(240,240,240)
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap");
+:root {
+  --pri-color: rgb(240, 122, 122);
+  --grey-color: rgb(240, 240, 240);
 }
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--pri-color);  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, rgb(248, 203, 203), rgb(252, 252, 252));  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, rgb(248, 203, 203), rgb(252, 252, 252)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--pri-color); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    30deg,
+    rgb(248, 203, 203),
+    rgb(252, 252, 252)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    30deg,
+    rgb(248, 203, 203),
+    rgb(252, 252, 252)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   min-height: 100vh;
 }
 
-.app-title{
+.app-title {
   color: var(--pri-color);
 }
 
-input{
+input {
   background-color: var(--grey-color);
 }
-input:focus{
-border: 2px solid var(--pri-color) ;
+input:focus {
+  border: 2px solid var(--pri-color);
+}
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.178);
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+
 }
 .event-modal {
   position: absolute;
@@ -33,33 +49,31 @@ border: 2px solid var(--pri-color) ;
   left: 50%;
   transform: translate(-50%, -50%);
   backdrop-filter: blur(10px);
+  border: 1px solid var(--grey-color);
 }
 .add-event {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
   background-color: var(--pri-color);
 }
-.pri-btn{
+.pri-btn {
   background-color: var(--pri-color);
   color: white;
 }
-.sec-btn{
-  border: 1px solid var(--pri-color);
+.sec-btn {
+  /* border: 1px solid var(--pri-color); */
   color: var(--pri-color);
 }
 .green-theme {
-  background-color: rgb(220,252,239);
-  border-left:0.35rem solid rgb(101,224,172);
-  color: rgb(84,152,124);
+  background-color: rgb(208, 252, 234);
+  border-left: 0.35rem solid rgb(101, 224, 172);
+  color: rgb(84, 152, 124);
 }
-.blue-theme{
-  background-color: rgb(220,240,252);
-  border-left:0.35rem solid rgb(101,165,224);
-  color: rgb(72,99,143);
+.blue-theme {
+  background-color: rgb(220, 240, 252);
+  border-left: 0.35rem solid rgb(101, 165, 224);
+  color: rgb(72, 99, 143);
 }
-.orange-theme{
-  background-color: rgb(252,235,220);
-  border-left:0.35rem solid rgb(253,152,0);
-  color: rgb(235,163,98);
+.orange-theme {
+  background-color: rgb(252, 235, 220);
+  border-left: 0.35rem solid rgb(253, 152, 0);
+  color: rgb(235, 163, 98);
 }

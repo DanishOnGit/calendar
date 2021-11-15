@@ -8,9 +8,10 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const sortedEvents = getSortedEvents(events);
   const themes = ["green", "blue", "orange"];
+
   return (
     <div className="App p-4 max-w-xl mx-auto">
-      <h1 className="app-title text-red-800 text-4xl text-center font-extrabold"> Kalendly </h1>
+      <h1 className="app-title mb-5 sm:mb-8 text-red-800 text-4xl text-center font-extrabold"> Kalendly </h1>
       <CreateEvent
         setEvents={setEvents}
         showModal={showModal}
@@ -29,7 +30,7 @@ function App() {
 
       <button
         onClick={() => setShowModal(true)}
-        className="z-10 add-event absolute bottom-3 right-3 rounded-lg p-2 text-white"
+        className="z-10 add-event absolute bottom-4 right-4 rounded-lg p-2 text-white"
       >
         <svg
           class="w-8 h-8"

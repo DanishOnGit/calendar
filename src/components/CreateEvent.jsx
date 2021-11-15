@@ -1,5 +1,5 @@
 import moment from "moment";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
   const [title, setTitle] = useState("");
@@ -7,8 +7,9 @@ export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
   const [startTime, setStartTime] = useState(
     moment().format("YYYY-MM-DDTHH:mm")
   );
-
   const [endTime, setEndTime] = useState(moment().format("YYYY-MM-DDTHH:mm"));
+
+  const titleRef = useRef(null);
 
   function addEvent() {
     setEvents((prev) => [...prev, { id: uuidv4(), title, startTime, endTime }]);
@@ -16,19 +17,24 @@ export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
     setShowModal(false);
   }
   function cancelEventAddition() {
+    setTitle("");
     setShowModal(false);
   }
+  useEffect(() => {
+    titleRef.current?.focus();
+  });
   return (
-    <div>
+    <div className={showModal ? "modal-wrapper" : "hidden"}>
       <div
         className={
           showModal
-            ? "event-modal block p-4 p mx-2 sm:mx-4  max-w-xs w-full rounded-3xl border border-green-500 text-center"
+            ? "event-modal bg-white bg-opacity-80 block p-4 p mx-2 sm:mx-4  max-w-xs w-full rounded-3xl text-center"
             : "hidden p-2 mx-2 sm:mx-4 event-modal max-w-xs w-full"
         }
       >
-        <h2>Add new event</h2>
+        <h2 className="mb-4">Add new event</h2>
         <input
+          ref={titleRef}
           value={title}
           className="px-2 py-3 my-2 block w-full focus:outline-none rounded-lg"
           type="text"
@@ -60,7 +66,7 @@ export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
         </button>
         <button
           onClick={cancelEventAddition}
-          className="sec-btn block border border-green-500 px-5 py-2 my-2 text-green-500 rounded-lg min-w-full"
+          className="sec-btn block px-5 py-2 my-2 rounded-lg min-w-full"
         >
           Cancel
         </button>
