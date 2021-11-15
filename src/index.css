@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.event-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-event {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+.green-theme {
+  background-color: rgb(4, 141, 95);
+  border-left:0.5rem solid rgb(0, 104, 85);
+}
+.blue-theme{
+  background-color: rgb(183, 196, 253);
+  border-left:0.5rem solid rgb(4, 36, 126);
+}
+.orange-theme{
+  background-color: rgb(250, 195, 150);
+  border-left:0.5rem solid rgb(184, 72, 2);
+}
