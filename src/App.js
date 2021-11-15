@@ -1,8 +1,11 @@
 import { useState } from "react";
-
+import { ToastContainer } from "react-toastify";
 import { CreateEvent } from "./components/CreateEvent";
 import { EventCard } from "./components/EventCard";
 import { getSortedEvents } from "./utils/getSortedEvents";
+import "react-toastify/dist/ReactToastify.css";
+
+
 function App() {
   const [events, setEvents] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -13,6 +16,7 @@ function App() {
     <div className="App p-4 max-w-xl mx-auto">
       <h1 className="app-title mb-5 sm:mb-8 text-red-800 text-4xl text-center font-extrabold"> Kalendly </h1>
       <CreateEvent
+      events={events}
         setEvents={setEvents}
         showModal={showModal}
         setShowModal={setShowModal}
@@ -21,6 +25,7 @@ function App() {
         {sortedEvents.map((event, idx) => {
           return (
             <EventCard
+            key={event.id}
               event={event}
               theme={idx >= 3 ? themes[idx % 3] : themes[idx]}
             />
@@ -47,6 +52,7 @@ function App() {
           ></path>
         </svg>
       </button>
+      <ToastContainer/>
     </div>
   );
 }

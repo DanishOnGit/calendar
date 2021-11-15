@@ -1,7 +1,9 @@
 import moment from "moment";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
-export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
+import { checkSlotAvailability } from "../utils/checkSlotAvailability";
+export const CreateEvent = ({ events, setEvents, showModal, setShowModal }) => {
   const [title, setTitle] = useState("");
 
   const [startTime, setStartTime] = useState(
@@ -12,9 +14,25 @@ export const CreateEvent = ({ setEvents, showModal, setShowModal }) => {
   const titleRef = useRef(null);
 
   function addEvent() {
-    setEvents((prev) => [...prev, { id: uuidv4(), title, startTime, endTime }]);
-    setTitle("");
-    setShowModal(false);
+    const result = checkSlotAvailability(startTime, events);
+    if (!result) {
+      setEvents((prev) => [
+        ...prev,
+        { id: uuidv4(), title, startTime, endTime },
+      ]);
+      setTitle("");
+      setShowModal(false);
+    } else {
+      toast.error("Slot already booked", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   }
   function cancelEventAddition() {
     setTitle("");
