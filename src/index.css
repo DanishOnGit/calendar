@@ -37,11 +37,11 @@ input:focus {
 }
 .modal-wrapper {
   background-color: rgba(0, 0, 0, 0.178);
+  backdrop-filter: blur(2px);
   position: absolute;
   inset: 0;
   min-height: 100vh;
   min-width: 100vw;
-
 }
 .event-modal {
   position: absolute;
@@ -50,6 +50,7 @@ input:focus {
   transform: translate(-50%, -50%);
   backdrop-filter: blur(10px);
   border: 1px solid var(--grey-color);
+  box-shadow: 0 10px 30px 0px rgba(150, 135, 129, 0.581);
 }
 .add-event {
   background-color: var(--pri-color);
