@@ -23,14 +23,17 @@ body {
   right: 2rem;
 }
 .green-theme {
-  background-color: rgb(4, 141, 95);
-  border-left:0.5rem solid rgb(0, 104, 85);
+  background-color: rgb(104, 184, 157);
+  border-left:0.35rem solid rgb(0, 104, 85);
+  color: rgb(0, 104, 85);
 }
 .blue-theme{
   background-color: rgb(183, 196, 253);
-  border-left:0.5rem solid rgb(4, 36, 126);
+  border-left:0.35rem solid rgb(4, 36, 126);
+  color: rgb(4, 36, 126);
 }
 .orange-theme{
   background-color: rgb(250, 195, 150);
-  border-left:0.5rem solid rgb(184, 72, 2);
+  border-left:0.35rem solid rgb(184, 72, 2);
+  color: rgb(184, 72, 2);
 }
