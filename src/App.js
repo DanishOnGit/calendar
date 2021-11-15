@@ -10,7 +10,7 @@ function App() {
   const themes = ["green", "blue", "orange"];
   return (
     <div className="App p-4 max-w-xl mx-auto">
-      <h1 className="text-red-800 text-2xl text-center"> Calendar </h1>
+      <h1 className="app-title text-red-800 text-4xl text-center font-extrabold"> Kalendly </h1>
       <CreateEvent
         setEvents={setEvents}
         showModal={showModal}
@@ -29,7 +29,7 @@ function App() {
 
       <button
         onClick={() => setShowModal(true)}
-        className="add-event rounded-full p-3 bg-green-500 text-white"
+        className="z-10 add-event absolute bottom-3 right-3 rounded-lg p-2 text-white"
       >
         <svg
           class="w-8 h-8"
