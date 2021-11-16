@@ -46,7 +46,7 @@ export const CreateEvent = ({ events, setEvents, showModal, setShowModal }) => {
       <div
         className={
           showModal
-            ? "event-modal bg-white bg-opacity-80 block p-4 p mx-2 sm:mx-4  max-w-xs w-full rounded-3xl text-center"
+            ? "event-modal bg-white bg-opacity-80 block p-4 p mx-2 sm:mx-4 w-full rounded-3xl text-center"
             : "hidden p-2 mx-2 sm:mx-4 event-modal max-w-xs w-full"
         }
       >
