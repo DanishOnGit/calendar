@@ -61,14 +61,14 @@ export const CreateEvent = ({ events, setEvents, showModal, setShowModal }) => {
         />
         <div className="flex items-center justify-between">
           <input
-            className="px-2 py-3 my-2 mr-2 block w-full focus:outline-none rounded-lg"
+            className="px-2 py-3 my-2 mr-2 block focus:outline-none rounded-lg"
             value={startTime}
             min={moment().format("YYYY-MM-DDThh:mm")}
             type="datetime-local"
             onChange={(e) => setStartTime(e.target.value)}
           />
           <input
-            className="px-2 py-3 my-2 block w-full focus:outline-none rounded-lg"
+            className="px-2 py-3 my-2 block focus:outline-none rounded-lg"
             value={endTime}
             min={moment(startTime).format("YYYY-MM-DDThh:mm")}
             type="datetime-local"
