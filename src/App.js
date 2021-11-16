@@ -21,9 +21,8 @@ function App() {
         : true
     );
     // setEvents(result);
-    return result
-  })();   
-
+    return result;
+  })();
 
   return (
     <div className="App p-4 max-w-xl mx-auto">
@@ -37,7 +36,7 @@ function App() {
             id="today-events"
             type="checkbox"
             checked={filterChecked}
-            onChange={()=>setFilterChecked(!filterChecked)}
+            onChange={() => setFilterChecked(!filterChecked)}
           />
           <label htmlFor="today-events">Show only today's events</label>
         </div>

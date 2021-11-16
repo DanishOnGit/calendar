@@ -24,7 +24,7 @@ export const CreateEvent = ({ events, setEvents, showModal, setShowModal }) => {
       setShowModal(false);
     } else {
       toast.error("Slot already booked", {
-        position: "bottom-right",
+        position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
