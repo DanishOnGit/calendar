@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap");
 :root {
   --pri-color: rgb(240, 122, 122);
+  --dark-pri-color: rgb(221, 87, 87);
   --grey-color: rgb(240, 240, 240);
 }
 body {
@@ -55,9 +56,17 @@ input:focus {
 .add-event {
   background-color: var(--pri-color);
 }
+.add-event:hover {
+  transition: all 200ms ease;
+  background-color: var(--dark-pri-color);
+}
 .pri-btn {
   background-color: var(--pri-color);
   color: white;
+}
+.pri-btn:hover {
+  transition: all 200ms ease;
+  background-color: var(--dark-pri-color);
 }
 .sec-btn {
   /* border: 1px solid var(--pri-color); */
