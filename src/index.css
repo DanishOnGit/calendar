@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap");
+*{
+  box-sizing: border-box;
+}
 :root {
   --pri-color: rgb(240, 122, 122);
   --dark-pri-color: rgb(221, 87, 87);
@@ -53,6 +56,11 @@ input:focus {
   backdrop-filter: blur(10px);
   border: 1px solid var(--grey-color);
   box-shadow: 0 10px 30px 0px rgba(150, 135, 129, 0.581);
+}
+@media (min-width:648px){
+  .event-modal{
+    max-width: 20rem;
+  }
 }
 .add-event {
   background-color: var(--pri-color);
