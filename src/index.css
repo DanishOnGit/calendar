@@ -32,7 +32,9 @@ body {
 .app-title {
   color: var(--pri-color);
 }
-
+.filter-check{
+  accent-color: var(--pri-color);
+}
 input {
   background-color: var(--grey-color);
 }
@@ -64,10 +66,12 @@ input:focus {
 }
 .add-event {
   background-color: var(--pri-color);
+  transition: all 200ms ease;
 }
 .add-event:hover {
   transition: all 200ms ease;
   background-color: var(--dark-pri-color);
+  transform: scale(1.1)
 }
 .pri-btn {
   background-color: var(--pri-color);

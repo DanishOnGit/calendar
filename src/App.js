@@ -33,11 +33,12 @@ function App() {
       {events.length > 0 && (
         <div>
           <input
+          className='filter-check'
             id="today-events"
             type="checkbox"
             checked={filterChecked}
             onChange={() => setFilterChecked(!filterChecked)}
-          />
+          />{" "}
           <label htmlFor="today-events">Show only today's events</label>
         </div>
       )}
